@@ -104,7 +104,7 @@ nav a:active {
 .google {
     display: block;
     background-color: lavender;
-    width: calc(100% - 6rem - 4px);
+    width: calc(100% - 5rem - 4px);
     padding: 2rem;
     margin: 1rem;
     /* there is also an extra 4px of border on the left, causing the width 100% element to overflow out of the container. we need to use the calc() function to fix */
