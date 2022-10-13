@@ -1,0 +1,104 @@
+:root {
+    --special-color: tomato;
+    --second-color: #551CF1;
+    --light-color: white;
+    --dark-color: black;
+
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Descendant ( space ) combinator */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Descendant ( space ) combinator */
+nav ul li {
+    /* Spaces out each list item evenly within the given space */
+    flex: 1;
+}
+
+/* Child ( > ) combinator */
+main > p {
+    font-size: 1.25rem;
+}
+
+/* Adjacent ( + ) combinator */
+h2 + p {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1rem;    
+}
+
+/* Sibling ( ~ ) combinator */
+.stars span:hover ~ span {
+    opacity: .5;
+
+}
+
+/* Descendant ( space ) combinator */
+.stars span {
+    cursor: pointer;
+}
+
+/* [] is to use attributes as selectors */
+a[href="#"] {
+    color: var(--special-color);
+}
+
+/* ^= selects attributes that BEGINS WITH the selected value*/
+a[href^="http"] {
+    border-left: 4px solid var(--special-color);
+    padding-left: 1rem;
+}
+
+/* Pseudo Elements */
+/* $= selects attributes that ENDS WITH the selected value*/
+a[href$=".pdf"]::after {
+    content:"\2913";
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--special-color);
+}
+
+h2 + p::first-line {
+    color: var(--special-color);
+}
+
+h3 + p::first-letter {
+    background-color: var(--second-color);
+    color: var(--light-color);
+    padding: .25rem;
+    margin-right: .1rem;
+}
+
+/* State related pseudo classes */
+/* Order in which pseudo classes should be --> :link :visited :hover :focus :active - LoVe HAte  */
+nav a,
+nav a:link,
+nav a:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform .5s;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+    transform: scale(1.4);      
+}
+
+nav a:active {
+    transform: scale(1.4) translateX(10px);  
+}
+
+
+
